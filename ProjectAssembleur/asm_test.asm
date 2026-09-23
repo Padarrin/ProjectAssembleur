@@ -12,14 +12,24 @@ asm_add PROC
     ret
 asm_add ENDP
 
-asm_mul8 PROC
-    lea     rax, [rcx * 8]
+asm_sub PROC
+    sub     rcx, rdx
+    mov     rax, rcx
     ret
-asm_mul8 ENDP
+asm_sub ENDP
 
-asm_find PROC
-    
-    ret     0
-asm_find ENDP
+asm_mul PROC
+    imul    rcx, rdx
+    mov     rax, rcx
+    ret
+asm_mul ENDP
+
+asm_div PROC
+    mov     r8, rdx
+    mov     rax, rcx
+    cdq
+    idiv    r8
+    ret
+asm_div ENDP
 
 END
