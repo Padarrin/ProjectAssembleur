@@ -18,21 +18,25 @@ using namespace std;
 
 void add(int64_t a, int64_t b)
 {
+	system("cls");
 	cout << " " << a << " + " << b << " = " << asm_add(a, b) << endl;
 }
 
 void sub(int64_t a, int64_t b)
 {
+	system("cls");
 	cout << " " << a << " - " << b << " = " << asm_sub(a, b) << endl;
 }
 
 void mult(int64_t a, int64_t b)
 {
+	system("cls");
 	cout << " " << a << " * " << b << " = " << asm_mul(2, 3) << endl;
 }
 
 void divide(int64_t a, int64_t b)
 {
+	system("cls");
 	cout << " " << a << " / " << b << " = " << asm_div(a, b) << endl;
 }
 
@@ -49,9 +53,51 @@ void testMaths()
 	cout << "--------------------" << endl;
 }
 
+void calculator()
+{
+	int math;
+	int64_t a;
+	int64_t b;
+
+	cout << "Choisir un calcul : \n Addition (1)\n Soustraction (2)\n Multiplication (3)\n Division (4)" << endl;
+	cin >> math;
+	
+	system("cls");
+
+	cout << " Première valeur :" << endl;
+	cin >> a;
+	cout << endl;
+
+	cout << " Deuxème valeur :" << endl;
+	cin >> b;
+
+
+	switch (math)
+	{
+	case 1:
+		add(a, b);
+		break;
+
+	case 2:
+		sub(a, b);
+		break;
+
+	case 3:
+		mult(a, b);
+		break;
+
+	case 4:
+		divide(a, b);
+		break;
+
+	default:
+		break;
+	}
+}
+
 int main()
 {
-	testMaths();
+	calculator();
 
 	return 0;
 }
